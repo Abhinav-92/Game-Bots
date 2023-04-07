@@ -25,7 +25,7 @@ public class SpawnEnemies : MonoBehaviour
 
     void SpawnRandomAsteroid(){
 
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), spawnPosY, 0);
+            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), spawnPosY, -1);
             int animalIndex = Random.Range(0, asteroidPrefabs.Length);
 
             Instantiate(asteroidPrefabs[animalIndex], spawnPos, asteroidPrefabs[animalIndex].transform.rotation);

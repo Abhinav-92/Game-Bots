@@ -22,15 +22,14 @@ public class BulletSpawn : MonoBehaviour
         else if(bulletType == 2)
         {
             Instantiate(bulletPrefab, position, rotation);
-            StartCoroutine(DelayBetweenBullets());
-            Instantiate(bulletPrefab, position, rotation);
-            StartCoroutine(DelayBetweenBullets());
-            Instantiate(bulletPrefab, position, rotation);
+            StartCoroutine(DelayBetweenBullets(position, rotation, 0.1f));
+            StartCoroutine(DelayBetweenBullets(position, rotation, 0.2f));
         }
     }
 
-    IEnumerator DelayBetweenBullets()
+    IEnumerator DelayBetweenBullets(Vector3 position, Quaternion rotation, float delay)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(delay);
+        Instantiate(bulletPrefab, position, rotation);
     }
 }
