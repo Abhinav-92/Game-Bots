@@ -33,7 +33,8 @@ public class TouchInputController : MonoBehaviour
             }
 
             if(endTouchPosition.x == startTouchPosition.x){
-                bulletController.FireBulletOnTouch(transform.position, transform.rotation, bulletType);
+                Vector3 pos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+                bulletController.FireBulletOnTouch(pos, transform.rotation, bulletType);
             }
 
         }
