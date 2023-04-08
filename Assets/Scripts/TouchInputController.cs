@@ -24,12 +24,12 @@ public class TouchInputController : MonoBehaviour
         {
             endTouchPosition = Input.GetTouch(0).position;
 
-            if(endTouchPosition.x < startTouchPosition.x) {
-                RightSwipe();
+            if((endTouchPosition.x < startTouchPosition.x) && (transform.position.x - 1 >= -2.0f)) {
+                LeftSwipe();
             }
 
-            if(endTouchPosition.x > startTouchPosition.x) {
-                LeftSwipe();
+            if((endTouchPosition.x > startTouchPosition.x) && (transform.position.x + 1 <= 2.0f) ) {
+                RightSwipe();
             }
 
             if(endTouchPosition.x == startTouchPosition.x){
@@ -41,12 +41,12 @@ public class TouchInputController : MonoBehaviour
         
     }
 
-    private void LeftSwipe()
+    private void RightSwipe()
     {
         transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
     }
 
-    private void RightSwipe()
+    private void LeftSwipe()
     {
         transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
     }

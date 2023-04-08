@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class SpaceshipController : MonoBehaviour
 {
-    TouchInputController inputController = null;
-    public int bulletType = 1;
-    private int life = 3;
+    TouchInputController inputController;
+    public static int bulletType = 3;
+    public static int life = 3;
+
+    [SerializeField] Image[] heartsArray = null;
+    // [SerializeField] Sprite filledHeart = null;
+    [SerializeField] Sprite emptyHeart = null;
 
     void Start()
     {
@@ -25,6 +29,7 @@ public class SpaceshipController : MonoBehaviour
         if(other.gameObject.tag == "se" || other.gameObject.tag == "me" || other.gameObject.tag == "le")
         {
             life--;
+            heartsArray[life].sprite = emptyHeart;
             if(life == 0){
                 Destroy(gameObject);
             }
