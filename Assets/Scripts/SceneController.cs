@@ -17,6 +17,7 @@ public class SceneController : MonoBehaviour
     public static void StartScreen()
     {
         SceneManager.LoadScene(0);
+        ScoreManager.Score=0;
     }
 
     public void Quit()

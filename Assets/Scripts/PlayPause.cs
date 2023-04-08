@@ -18,11 +18,13 @@ public class PlayPause : MonoBehaviour
         if(isPaused){
             playPauseImage.sprite = playSprite;
             Time.timeScale = 0;
+            SpaceshipController.audio.Stop();
 
         }
         else {
             playPauseImage.sprite = pauseSprite;
             Time.timeScale = 1;
+            SpaceshipController.audio.Play();
         }
     }
 }

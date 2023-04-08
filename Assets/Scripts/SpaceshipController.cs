@@ -13,10 +13,14 @@ public class SpaceshipController : MonoBehaviour
     [SerializeField] Image[] heartsArray = null;
     // [SerializeField] Sprite filledHeart = null;
     [SerializeField] Sprite emptyHeart = null;
+    [SerializeField] public static AudioSource audio;
 
     void Start()
     {
+        life=3;
         inputController = GetComponent<TouchInputController>();
+        audio = GetComponent<AudioSource>();
+        audio.Play();
     }
 
     // Update is called once per frame

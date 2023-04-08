@@ -8,6 +8,11 @@ public class ScoreManager : MonoBehaviour
    public static int Score =0;
     public TextMeshProUGUI scoreText;
     
+    // void Start()
+    // {
+    //     Score=0;
+        
+    // }
 
     void Update(){
         scoreText.text = "Score : " + Score.ToString();
