@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeteorController : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float speed = 5f;
+    private float speed = 4f;
     public static int health;
 
     void Start()

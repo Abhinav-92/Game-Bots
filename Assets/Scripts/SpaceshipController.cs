@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpaceshipController : MonoBehaviour
 {
     TouchInputController inputController;
-    public static int bulletType = 3;
+    public static int bulletType = 1;
     public static int life = 3;
 
     [SerializeField] Image[] heartsArray = null;
@@ -32,6 +33,7 @@ public class SpaceshipController : MonoBehaviour
             heartsArray[life].sprite = emptyHeart;
             if(life == 0){
                 Destroy(gameObject);
+                SceneManager.LoadScene(2);
             }
         }
     }
