@@ -8,6 +8,8 @@ TagManager:
   - se
   - me
   - le
+  - ts
+  - ms
   layers:
   - Default
   - TransparentFX

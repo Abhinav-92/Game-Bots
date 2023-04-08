@@ -36,7 +36,25 @@ public class SpaceshipController : MonoBehaviour
                 SceneManager.LoadScene(2);
             }
         }
+        else if(other.gameObject.tag == "ts") {
+            bulletType = 2;
+            Destroy(other.gameObject);
+            StartCoroutine(PowerUpTime());
+        }
+        else if(other.gameObject.tag == "ms") {
+            bulletType = 3;
+            Destroy(other.gameObject);
+            StartCoroutine(PowerUpTime());
+        }
     }
+
+    IEnumerator PowerUpTime()
+    {
+        yield return new WaitForSeconds(5.0f);
+        bulletType = 1;
+    }
+
+    
 
 
 }

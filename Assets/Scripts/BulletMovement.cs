@@ -18,18 +18,13 @@ public class BulletMovement : MonoBehaviour
 
     private void SpreadBulletMovement(Quaternion rotation)
     {
-        // float width = 1.7f;
-        // float height = 4.5f;
-        // float theta_r = Mathf.Atan(width/height);
-        // float theta = Mathf.Atan(width/height) - Mathf.PI / 4;
 
         float theta = rotation.y;
-
-
         float dx = Mathf.Sin(theta);
         float dy = Mathf.Cos(theta);
 
 
         transform.position = new Vector3(transform.position.x + (dx * Time.deltaTime * speed), transform.position.y + (dy * Time.deltaTime * speed), transform.position.z );
     }
+
 }

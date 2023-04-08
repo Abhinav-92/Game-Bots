@@ -5,13 +5,13 @@ using UnityEngine;
 public class DetectCollision : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "Player" || gameObject.tag == other.gameObject.tag) return;
+        if(other.gameObject.tag == "Player" || gameObject.tag == other.gameObject.tag || gameObject.tag == "ts" || gameObject.tag == "ms") return;
 
         Destroy(gameObject);
         
          
         if(other.gameObject.tag == "se"){
-           ScoreManager.Score += 5;
+           ScoreManager.Score += 10;
            MeteorController.health--;
         }
       else  if(other.gameObject.tag == "me"){
